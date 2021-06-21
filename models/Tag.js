@@ -8,13 +8,13 @@ Tag.init(
   {
     // define columns
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER, // data type is an integer
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
-    tagName: {
-      type: DataTypes.STRING,
+    tagName: { 
+      type: DataTypes.STRING, // data type is a string
     },
   },
   {

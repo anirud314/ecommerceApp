@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
         through: ProductTag,
       },
     ],
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })
@@ -120,7 +120,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })

@@ -28,11 +28,11 @@ router.get('/:id', (req, res) => {
         through: ProductTag,
       },
     ],
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })
-  .then((tag) => res.status(200).json(tag))
+  .then((tags) => res.status(200).json(tags))
   .catch((err) => res.status(404).json(err));
 
 });
@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
   Tag.destroy({
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })

@@ -1,4 +1,42 @@
 # 13 Object Relational Mapping (ORM): E-commerce Back End
+# Dev Journal
+
+## Screenshot Gifs
+
+![Postman Test 1.](./Assets/Test1.gif)
+
+![Postman Test 2.](./Assets/Test2.gif)
+
+![Postman Test 3.](./Assets/Test3.gif)
+
+## Dev Journal
+Steps:
+1) Set up the project based on the GITLAB
+2) Parse through the instructions to see what is going on
+3) Start and finish setting up the db Models and associations
+4) Start and finish setting up the API routes
+5) Test with postman.
+6) Debug
+
+### Step 1 and 2 details
+I pulled the code from gitlab and started working on the files in the develop folder. In order to figure out both the instructions and what I should start with I decided to look through the given code and figure out what I need to build. After doing that and looking through the gitlab, I decided to break the work into 3 parts, building the models, building the routes, and testing with postman and debugging.
+
+### Step 3
+To start off with I started building DB models, Doing this allows us to create a template for different sets of data that we are storing and pulling from a database. This is easy enough due to the documentation on the readme instructions. I was able to take the instructions provided to me and the examples I worked with in the activities, tutoring sessions, and the module and build models for the category, product, tag and product tag. After that I had to set up associations/relationships between each table which was done in the index.js in the models folder. Alot of the types of code I needed to use here were given in comments, and I used google and external resources to research to see if I Implemented it correctly.
+
+### Step 4
+This is sort of the meat and potatoe's/ the functionality of the project, which is to create an api that can be used to CRUD the data from the mysql database we set up. This required me to do a bit more research to figure out what I was doing, Some parts like setting up the create and delete endpoints were easy, other parts like setting up the findAll, update and findOne endpoints were a bit finicky but with a bit of explanation from a tutor and a bit of exposure from practice from the internet and the modules I was able to make it work for the most part. For this I did get alot of help from the comments and documentation, but also from the tutors because they helped me understand how the data was being manipulated through the api and what exactly was going on. 
+
+### Step 5
+I have some prior experience using postman so I decided to work from there and test all of my endpoints. At first it was sort of difficult trying to figure out what was required of me to do in order to use Push, Post, Delete routes, but after looking at the gifs and doing some more experimentation with postman I was able to see results correctly.
+
+### Debug
+This is the section where I voice syntactical issues I faced. One of the things I faced was when I was working on setting up the models I defined the variables my way, Like instead of category_names I put categoryNames. I did this because I was inherintly just typing in camel case, I wasnt really thinking about it. But this caused errors when running npm run seed. This is because in the seed files the values are all set up based on the style of category_name, and I wrote all of my variables in camel case. So I had to manually change that to fix it. Another Issue I had is a mysql issue. I have been struggling with mysql as seen on my previous assignment. One of the things I struggled with was interacting with mySQL programatically and through the console. I got some help with my tutor and the internet to figure out what I should do for this project, especially with sequelize and dotenv. The only issue I had was setting up the schema using the commandline. So instead I just opened up the workbench and set up the schema from there. Aside from that alot of the issues I had were more troubleshooting issues on postman and mysql.
+
+### Personal notes
+Here I will discuss what I think about this challenge and what struggles I personally had to get this project done. To start off with I did have some struggles balancing my new work life with doing bootcamp projects, For the past two weeks I have been off of my game, which is why I had to use my last skip and take a bad score on one of the challenges. I decided to buckle down and ask for help where I needed my gaps filled. I worked with a tutor and he showed me some of the gaps in my understanding for ORM and for this challenge. Then on my own time when I got stuck on the project I just looked on the internet to see examples and worked from there. The thing about this project that I felt that alleviated my time crunch is that alot of the code was given to us and all I had to do is fill in some gaps that were easy to get done. Alot of the code I had to do was somewhat copy and paste. I could easily reuse and reformat code from one model to another, and it was sort of similar with setting up routes. There were a few things that I didnt get syntactically like res.status(---), for those I just googled it and asked people, I eventually figured out what to use for what and why I should use it.
+
+## Instructions
 
 Internet retail, also known as e-commerce, is the largest sector of the electronics industry, having generated an estimated US$29 trillion in 2017 (Source: United Nations Conference on Trade and Development). E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to the prevalence of these platforms, developers should understand the fundamental architecture of e-commerce sites.
 

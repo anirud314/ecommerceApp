@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   Category.findOne({
     // be sure to include its associated Products
     include: [Product],
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update(req.body, {
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })
@@ -49,7 +49,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
-    where: {
+    where: { // used to catch based on id
       id: req.params.id,
     },
   })
