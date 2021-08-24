@@ -8,6 +8,7 @@ I have made the fix to allow for offline and online usage thanks to help from my
 ![Postman final tests](./Assets/finalized.gif)
 
 This is an example of me running the app and using postman to test. I didnt test all of it in one gif due to lack of capacity for screencastify.
+
 ## Screenshot Gifs
 
 ![Postman Test 1.](./Assets/Test1.gif)
