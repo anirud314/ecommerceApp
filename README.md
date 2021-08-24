@@ -1,5 +1,11 @@
 # 13 Object Relational Mapping (ORM): E-commerce Back End
-# Dev Journal
+
+# UPDATE 
+# Dev Journal 8/23/21
+
+I have made the fix to allow for offline and online usage thanks to help from my tutor. I had a couple of issues, one of the issues I found that caused alot of things to break was something that I could only understand as a bug when using sequelize in particular with my product routes. Instead of using product_id sequelize was parsing it as product_i_d and due to that the product api endpoints didnt work. This was very hard to troubleshoot because even now neither my tutor nor I could figure out why It broke like that. 
+
+![Postman Test 1.](./Assets/Test1.gif)
 
 ## Screenshot Gifs
 

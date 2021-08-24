@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
-  product.findOne({
+  Product.findOne({
     // be sure to include its associated Category and Tag data
     include: [Category, {
         model: Tag,
@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
+        const productTagIdArr = req.body.tagIds.map((tag_id) => {// Right HERE???
           return {
             product_id: product.id,
             tag_id,
@@ -85,7 +85,7 @@ router.put('/:id', (req, res) => {
   })
     .then((product) => {
       // find all associated tags from ProductTag
-      return ProductTag.findAll({ where: { product_id: req.params.id } });
+      return ProductTag.findAll({ where: { product_i_d: req.params.id } }); //RIGHT HERE???
     })
     .then((productTags) => {
       // get list of current tag_ids
@@ -95,13 +95,13 @@ router.put('/:id', (req, res) => {
         .filter((tag_id) => !productTagIds.includes(tag_id))
         .map((tag_id) => {
           return {
-            product_id: req.params.id,
-            tag_id,
+            product_id: req.params.id, //RIGHT HERE???
+            tag_id, //RIGHT HERE???
           };
         });
       // figure out which ones to remove
       const productTagsToRemove = productTags
-        .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
+        .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id)) //RIGHT HERE???
         .map(({ id }) => id);
 
       // run both actions
